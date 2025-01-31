@@ -7,13 +7,10 @@ public class Main {
         System.out.println();
         System.out.println("----- =====   Задание № 1   ===== -----");
         byte clientOS = 0;
-        switch (clientOS) {
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке ....");
-                break;
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке ....");
-                break;
+        if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке ....");
+        } else {
+            System.out.println("Установите версию приложения для iOS по ссылке ....");
         }
 
 //        ----- =====   Задание № 2   ===== -----
@@ -38,15 +35,14 @@ public class Main {
         System.out.println();
         System.out.println("----- =====   Задание № 3   ===== -----");
         short year = 2021;
-        if (year >= 1584) {
-            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-                System.out.println("Год " + year + " - высокосный.");
-            } else {
-                System.out.println("Год " + year + " - не высокосный.");
-            }
+        if (year <=1584) {
+            mess = " - за пределом принятого летоисчисления високосных годов.";
+        } else if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            mess = " Високосный";
         } else {
-            System.out.println("Год " + year + " - за пределом принятого летоисчисления высокосных годов.");
+            mess = " Не високосный";
         }
+        System.out.println("Год " + year + mess);
 
 //        ----- =====   Задание № 4   ===== -----
 
